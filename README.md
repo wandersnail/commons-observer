@@ -1,6 +1,6 @@
 ## 代码托管
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/cn.wandersnail/common-observer/badge.svg)](https://maven-badges.herokuapp.com/maven-central/cn.wandersnail/common-observer)
-[![Download](https://api.bintray.com/packages/wandersnail/android/common-observer/images/download.svg) ](https://bintray.com/wandersnail/android/common-observer/_latestVersion)
+[![Download](https://api.bintray.com/packages/wandersnail/androidx/common-observer/images/download.svg) ](https://bintray.com/wandersnail/androidx/common-observer/_latestVersion)
 
 
 ## 使用

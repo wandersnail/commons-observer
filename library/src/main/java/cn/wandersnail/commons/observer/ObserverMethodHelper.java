@@ -1,7 +1,4 @@
-package com.snail.commons.observer;
-
-import com.snail.commons.methodpost.MethodInfo;
-import com.snail.commons.methodpost.ThreadMode;
+package cn.wandersnail.commons.observer;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
@@ -11,6 +8,9 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
+
+import cn.wandersnail.commons.poster.MethodInfo;
+import cn.wandersnail.commons.poster.ThreadMode;
 
 /**
  * date: 2019/8/9 15:13

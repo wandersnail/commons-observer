@@ -1,4 +1,4 @@
-package com.snail.commons.observer;
+package cn.wandersnail.commons.observer;
 
 /**
  * 观察者

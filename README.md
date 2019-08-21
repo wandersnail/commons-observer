@@ -1,7 +1,6 @@
 ## 代码托管
-[![](https://jitpack.io/v/wandersnail/commons-observer.svg)](https://jitpack.io/#wandersnail/commons-observer)
-[![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.github.wandersnail/commons-observer/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.github.wandersnail/commons-observer)
-[![Download](https://api.bintray.com/packages/wandersnail/android/commons-observer/images/download.svg) ](https://bintray.com/wandersnail/android/commons-observer/_latestVersion)
+[![Maven Central](https://maven-badges.herokuapp.com/maven-central/cn.wandersnail/common-observer/badge.svg)](https://maven-badges.herokuapp.com/maven-central/cn.wandersnail/common-observer)
+[![Download](https://api.bintray.com/packages/wandersnail/android/common-observer/images/download.svg) ](https://bintray.com/wandersnail/android/common-observer/_latestVersion)
 
 
 ## 使用
@@ -10,18 +9,18 @@
 ```
 dependencies {
 	...
-	implementation 'com.github.wandersnail:commons-observer:latestVersion'
-	implementation 'com.github.wandersnail:commons-method-poster:latestVersion'
+	implementation 'com.github.wandersnail:common-observer:latestVersion'
+	implementation 'com.github.wandersnail:common-poster:latestVersion'
 }
 ```
 
-2. 如果从jcenter下载失败。在project的build.gradle里的repositories添加内容，最好两个都加上，有时jitpack会抽风，同步不下来。添加完再次同步即可。
+2. 如果从jcenter下载失败。在project的build.gradle里的repositories添加内容，最好两个都加上，添加完再次同步即可。
 ```
 allprojects {
 	repositories {
 		...
-		maven { url 'https://jitpack.io' }
-		maven { url 'https://dl.bintray.com/wandersnail/android/' }
+		mavenCentral()
+		maven { url 'https://dl.bintray.com/wandersnail/androidx/' }
 	}
 }
 ```

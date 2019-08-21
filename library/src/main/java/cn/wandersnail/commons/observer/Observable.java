@@ -1,7 +1,4 @@
-package com.snail.commons.observer;
-
-import com.snail.commons.methodpost.MethodInfo;
-import com.snail.commons.methodpost.PosterDispatcher;
+package cn.wandersnail.commons.observer;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -11,6 +8,8 @@ import java.util.Objects;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import cn.wandersnail.commons.poster.MethodInfo;
+import cn.wandersnail.commons.poster.PosterDispatcher;
 
 /**
  * 消息发布者、被观察者
@@ -30,6 +29,13 @@ public final class Observable {
     public Observable(@NonNull PosterDispatcher posterDispatcher, boolean isObserveAnnotationRequired) {
         this.posterDispatcher = posterDispatcher;
         helper = new ObserverMethodHelper(posterDispatcher.getDefaultMode(), isObserveAnnotationRequired);
+    }
+
+    /**
+     * 方法分发者
+     */
+    public PosterDispatcher getPosterDispatcher() {
+        return posterDispatcher;
     }
 
     /**

@@ -6,9 +6,8 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
-import cn.wandersnail.commons.poster.ThreadMode;
-
 /**
+ * 是否开启观察（接收通知）
  * 
  * date: 2019/8/9 12:46
  * author: zengfansheng
@@ -17,5 +16,4 @@ import cn.wandersnail.commons.poster.ThreadMode;
 @Retention(RetentionPolicy.RUNTIME)
 @Target({ElementType.METHOD})
 public @interface Observe {
-    ThreadMode value() default ThreadMode.UNSPECIFIED;
 }

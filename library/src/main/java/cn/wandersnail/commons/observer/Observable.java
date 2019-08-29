@@ -1,5 +1,6 @@
 package cn.wandersnail.commons.observer;
 
+import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -28,7 +29,7 @@ public final class Observable {
      */
     public Observable(@NonNull PosterDispatcher posterDispatcher, boolean isObserveAnnotationRequired) {
         this.posterDispatcher = posterDispatcher;
-        helper = new ObserverMethodHelper(posterDispatcher.getDefaultMode(), isObserveAnnotationRequired);
+        helper = new ObserverMethodHelper(isObserveAnnotationRequired);
     }
 
     /**
@@ -59,7 +60,7 @@ public final class Observable {
             if (registered) {
                 throw new RuntimeException("Observer " + observer + " is already registered.");
             }
-            Map<String, ObserverMethod> methodMap = helper.findObserverMethod(observer);
+            Map<MethodInfo, Method> methodMap = helper.findObserverMethod(observer);
             observerInfos.add(new ObserverInfo(observer, methodMap));
         }
     }
@@ -140,11 +141,10 @@ public final class Observable {
         for (ObserverInfo oi : infos) {
             Observer observer = oi.weakObserver.get();
             if (observer != null) {
-                String key = helper.getMethodString(info);
-                ObserverMethod observerMethod = oi.methodMap.get(key);
-                if (observerMethod != null) {
-                    Runnable runnable = helper.generateRunnable(observer, observerMethod.getMethod(), info);
-                    posterDispatcher.post(observerMethod.getThreadMode(), runnable);
+                Method method = oi.methodMap.get(info);
+                if (method != null) {
+                    Runnable runnable = helper.generateRunnable(observer, method, info);
+                    posterDispatcher.post(method, runnable);
                 }
             }
         }
